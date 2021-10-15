@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.fakeslink.app.viewmodel.LoginViewModel" />
+        <import type="com.example.fakeslink.app.viewmodel.LoginLoadingState"/>
+        <import type="android.view.View"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        tools:context=".app.view.LoginActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:visibility="@{viewModel.isLoading ? View.INVISIBLE : View.VISIBLE}"
+            android:weightSum="4"
+            android:paddingTop="100dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ptit" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                android:paddingTop="20dp"
+                android:paddingHorizontal="20dp"
+                app:errorEnabled="true"
+                app:hintEnabled="true"
+                android:id="@+id/login_username_layout"
+                android:hint="@string/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/login_username"
+                    android:text="@={viewModel.username}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                android:paddingHorizontal="20dp"
+                app:errorEnabled="true"
+                app:hintEnabled="true"
+                android:id="@+id/login_password_layout"
+                android:hint="@string/password"
+                app:passwordToggleEnabled="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/login_password"
+                    android:text="@={viewModel.password}"
+                    android:inputType="textPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_gravity="center"
+                android:paddingHorizontal="20dp"
+                android:textColor="@color/white"
+                android:id="@+id/login_login_button"
+                android:text="@string/sign_in"
+                android:backgroundTint="@color/red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <include layout="@layout/circular_progress_indicator"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.INVISIBLE}" android:id="@+id/login_loading"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
