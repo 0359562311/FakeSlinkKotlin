@@ -75,22 +75,22 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun observeState() {
-        binding.viewModel?.loginState?.observe(this,
-            { loginState ->
-                when(loginState){
-                    is LoginFailState -> {
-                        MyAlertDialog.showAlertDialog(this, "Error", loginState.message)
-                    }
-                    is LoginLoadingState -> {
-                        hideKeyboard()
-                    }
-                    is LoginSuccessfulState -> {
-                        setResult(RESULT_OK)
-                        startActivity(Intent(this, MainActivity::class.java))
-                        finish()
-                    }
+        binding.viewModel?.loginState?.observe(this
+        ) { loginState ->
+            when (loginState) {
+                is LoginFailState -> {
+                    MyAlertDialog.showAlertDialog(this, "Error", loginState.message)
                 }
-            })
+                is LoginLoadingState -> {
+                    hideKeyboard()
+                }
+                is LoginSuccessfulState -> {
+                    setResult(RESULT_OK)
+                    startActivity(Intent(this, MainActivity::class.java))
+                    finish()
+                }
+            }
+        }
     }
 
     private fun hideKeyboard() {

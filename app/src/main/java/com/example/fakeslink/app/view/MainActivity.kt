@@ -75,10 +75,10 @@ class MainActivity : AppCompatActivity(), Serializable {
             access = SharePreferenceUtils.getString("access")!!
         )
         Log.d("TanKiem", GlobalVariable.session?.access ?: "no access")
-        if (GlobalVariable.session == null) {
-            startActivity(Intent(this, LoginActivity::class.java))
-            this.finish()
-        }
+//        if (GlobalVariable.session == null) {
+//            startActivity(Intent(this, LoginActivity::class.java))
+//            this.finish()
+//        }
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav_bar)
         supportFragmentManager.beginTransaction()
             .show(fragments[0])

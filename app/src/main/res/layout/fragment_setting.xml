@@ -125,7 +125,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
 
-                        <Space
+                        <androidx.legacy.widget.Space
                             android:layout_width="16dp"
                             android:layout_height="0dp"/>
 
@@ -135,7 +135,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
-                        <Space
+                        <androidx.legacy.widget.Space
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="0dp"/>
@@ -170,7 +170,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
 
-                        <Space
+                        <androidx.legacy.widget.Space
                             android:layout_width="16dp"
                             android:layout_height="0dp"/>
 
@@ -180,7 +180,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
-                        <Space
+                        <androidx.legacy.widget.Space
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="0dp"/>
@@ -215,7 +215,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
 
-                        <Space
+                        <androidx.legacy.widget.Space
                             android:layout_width="16dp"
                             android:layout_height="0dp"/>
 
@@ -225,7 +225,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
-                        <Space
+                        <androidx.legacy.widget.Space
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="0dp"/>
@@ -260,7 +260,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
 
-                        <Space
+                        <androidx.legacy.widget.Space
                             android:layout_width="16dp"
                             android:layout_height="0dp"/>
 
@@ -270,7 +270,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
-                        <Space
+                        <androidx.legacy.widget.Space
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="0dp"/>
@@ -285,7 +285,7 @@
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
-                <Space
+                <androidx.legacy.widget.Space
                     android:layout_width="0dp"
                     android:layout_height="24dp" />
 
@@ -306,7 +306,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
-                    <Space
+                    <androidx.legacy.widget.Space
                         android:layout_width="16dp"
                         android:layout_height="0dp"/>
 
@@ -316,7 +316,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
-                    <Space
+                    <androidx.legacy.widget.Space
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="0dp"/>
@@ -328,6 +328,15 @@
                         android:layout_height="wrap_content" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <com.example.fakeslink.custom_views.SettingLine
+                    android:id="@+id/setting_line_in_setting_frag"
+                    app:icon="@drawable/ic_log_out_24"
+                    app:iconColor="@color/red"
+                    app:iconOnPressedColor="@color/light_red"
+                    app:title="Dang xuat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
 
             </androidx.appcompat.widget.LinearLayoutCompat>
